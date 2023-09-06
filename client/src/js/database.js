@@ -20,7 +20,7 @@ export const postDb = async (content) => {
   const store = tx.objectStore('jate');
   const request = store.add({ jate: content});
   const result = await request;
-  console.log('data posted to the db');
+  console.log('data posted to the db', result);
 };
 
 
@@ -48,9 +48,9 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
   const request = store.getAll();
   const result = await request;
-  console.log('result.value', result);
-  if (result) {
-    return result;
+  console.log('result.value', result[result.length-1]);
+  if (result[result.length-1]) {
+    return result[result.length-1].jate;
   } else {
   console.error('getDb not implemented')
   }
