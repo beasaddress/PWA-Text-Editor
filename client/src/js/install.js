@@ -7,10 +7,11 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
     // Remove the hidden class from the button.
     butInstall.classList.toggle('hidden', false);
+    console.log(deferredPrompt);
   });
 
 butInstall.addEventListener('click', async () => {
-  
+  console.log('you clicked!');
   const promptEvent = window.deferredPrompt;
 
   if (!promptEvent) {
