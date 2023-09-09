@@ -32,6 +32,8 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Text Editor',
         short_name: 'PWAText',
         description: 'On the go, virtual notepad!',
